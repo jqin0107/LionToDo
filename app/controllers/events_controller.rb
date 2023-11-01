@@ -70,7 +70,7 @@ class EventsController < ApplicationController
       def update
         @event = Event.find params[:id]
         @event.update_attributes!(event_params)
-        flash[:notice] = "#{@event.event_name} was successfully updated."
+        flash[:notice] = "#{@event.title} was successfully updated."
         # if can_modify(@event)
         #   begin 
         #     @event.update_attributes!(event_params)
@@ -99,7 +99,7 @@ class EventsController < ApplicationController
       # Making "internal" methods private is not required, but is a common practice.
       # This helps make clear which methods respond to requests, and which ones do not.
       def event_params
-        params.require(:event).permit(:event_name, :location, :date, :tags)
+        params.require(:event).permit(:title, :location, :date, :tags)
       end 
 
       # private

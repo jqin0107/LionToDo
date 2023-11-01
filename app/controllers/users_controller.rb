@@ -6,7 +6,7 @@ class UsersController < ApplicationController
         if session[:user_id]
             @user = User.find session[:user_id]
             if @user != nil
-                redirect_to activities_path
+                redirect_to events_path
                 return
             end
         end
