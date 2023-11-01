@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'users/logout', to: 'users#logout'
   resources :users
   resources :sessions
-  resources :activities
+  resources :events
   resources :relations
   resources :following
   # Example resource route with options:

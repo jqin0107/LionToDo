@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   #before_action :user_authenticate
   before_action :force_index_redirect, only: [:index]
-  helper_method :get_organizor_name, :can_modify, :participated
+  #helper_method :get_organizor_name, :can_modify, :participated
 
       def show
         id = params[:id] 
@@ -14,7 +14,7 @@ class EventsController < ApplicationController
         #   if e[:date] < Date.today
         #     e.update(open_status: 'Close')
         #   end
-        end
+        #end
 
         #@event_status = params[:event_status]
         @all_tags = Event.all_tags
