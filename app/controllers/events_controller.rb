@@ -52,7 +52,7 @@ class EventsController < ApplicationController
         rescue => exception
           flash[:notice] = "Some fields are empty, event cannot be created."
         else
-          flash[:notice] = "#{@event.event_name} was successfully created."
+          flash[:notice] = "#{@event.title} was successfully created."
 
         end
         # ActivityUserRelation.create!(session[:user_id], @event.id)
