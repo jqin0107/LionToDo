@@ -61,3 +61,5 @@ describe ToDoListController, type: :controller do
             expect(assigns(:activity).date).to eq('26-Oct-2023')
         end
     end
+
+end
