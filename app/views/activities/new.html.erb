@@ -1,30 +1,18 @@
-<h2>Create New Activity</h2>
+<h2>Create New Event</h2>
 
 <%= form_tag activities_path, :class => 'form' do %>
-  <%= label :activity, :event_name, 'Name', :class => 'col-form-label' %>
-  <%= text_field :activity, :event_name, :class => 'form-control' %>
+  <%= label :event, :event_name, 'Name', :class => 'col-form-label' %>
+  <%= text_field :event, :event_name, :class => 'form-control' %>
 
-  <%= label :activity, :category, 'Category', :class => 'col-form-label'  %>
-  <%= select :activity, :category, ['Arts', 'Entertainment', 'Education', 'Sports', 'Outdoor', 'Others'], {}, {:class => 'form-control col-1'} %>
+  <%= label :event, :tag, 'Tag', :class => 'col-form-label'  %>
+  <%= select :event, :tag, ['Computer Science', 'Speech', 'Business', 'Career Fair', 'Others'], {}, {:class => 'form-control col-1'} %>
 
-  <%= label :activity, :open_status, 'Status', :class => 'col-form-label'  %>
-  <%= select :activity, :open_status, ['Open', 'Close'], {}, {:class => 'form-control col-1'} %>
+  <%= label :event, :location, 'Location', :class => 'col-form-label' %>
+  <%= text_field :event, :location, :class => 'form-control' %>
 
-  <%= label :activity, :location, 'Location', :class => 'col-form-label' %>
-  <%= text_field :activity, :location, :class => 'form-control' %>
-
-  <%= label :activity, :max_size, 'Max Party Size', :class => 'col-form-label' %>
-  <%= text_field :activity, :max_size, :class => 'form-control' %>
-
-  <%= label :activity, :current_size, 'Current Party Size', :class => 'col-form-label' %>
-  <%= text_field :activity, :current_size, :class => 'form-control' %>
-
-  <%= label :activity, :description, 'Description', :class => 'col-form-label' %>
-  <%= text_field :activity, :description, :class => 'form-control' %>
-
-  <%= label :activity, :date, 'Date', :class => 'col-form-label'  %>
-  <%= date_select :activity, :date, {}, :class => 'form-control col-2 d-inline' %>
+  <%= label :event, :date, 'Date', :class => 'col-form-label'  %>
+  <%= date_select :event, :date, {}, :class => 'form-control col-2 d-inline' %>
   <br/>
   <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
-  <%= link_to 'Cancel', activities_path, :class => 'btn btn-secondary' %>
+  <%= link_to 'Cancel', events_path, :class => 'btn btn-secondary' %>
 <% end %>
