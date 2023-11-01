@@ -13,6 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20231101204210) do
 
+  create_table "activity_user_relations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "activity_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.string   "tag"

@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 	validates :location, presence: true
 	#validates :max_size, presence: true
 	#validates :current_size, presence: true
-	validates :tag, presence: true
+	#validates :tag, presence: true
 	#validates :open_status, presence: true
 
 	def self.all_tags

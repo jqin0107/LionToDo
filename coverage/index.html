@@ -1021,7 +1021,7 @@
 
             
 
-            <code class="ruby">        @all_categories = Activity.all_categories</code>
+            <code class="ruby">        @all_tags = Event.all_tags</code>
           </li>
         </div>
       
@@ -1032,7 +1032,7 @@
 
             
 
-            <code class="ruby">        @activities_with_category = Activity.with_categories(category_list, sort_by)</code>
+            <code class="ruby">        @events_with_tag = Event.with_tags(tag_list, sort_by)</code>
           </li>
         </div>
       
@@ -1054,7 +1054,7 @@
 
             
 
-            <code class="ruby">          @activities = open_activities(@activities_with_category)</code>
+            <code class="ruby">          @events = open_events(@events_with_tag)</code>
           </li>
         </div>
       
@@ -1076,7 +1076,7 @@
 
             
 
-            <code class="ruby">          @activities = @activities_with_category</code>
+            <code class="ruby">          @events = @events_with_tag</code>
           </li>
         </div>
       
@@ -1131,7 +1131,7 @@
 
             
 
-            <code class="ruby">        @categories_hash = categories_hash</code>
+            <code class="ruby">        @tags_hash = tags_hash</code>
           </li>
         </div>
       

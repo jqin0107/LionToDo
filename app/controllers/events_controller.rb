@@ -43,18 +43,18 @@ class EventsController < ApplicationController
       end
     
       def create
-        # @event = Event.create!(event_params)
-        # @event.update(creator_id: session[:user_id])
-        # flash[:notice] = "#{@event.title} was successfully created."
-        begin
-          @event = Event.create!(event_params)
-          @event.update(creator_id: session[:user_id])
-        rescue => exception
-          flash[:notice] = "Some fields are empty, event cannot be created."
-        else
-          flash[:notice] = "#{@event.title} was successfully created."
+        @event = Event.create!(event_params)
+        #@event.update(creator_id: session[:user_id])
+        flash[:notice] = "#{@event.title} was successfully created."
+        # begin
+        #   @event = Event.create!(event_params)
+        #   @event.update(creator_id: session[:user_id])
+        # rescue => exception
+        #   flash[:notice] = "Some fields are empty, event cannot be created."
+        # else
+        #   flash[:notice] = "#{@event.title} was successfully created."
 
-        end
+        # end
         # ActivityUserRelation.create!(session[:user_id], @event.id)
         
         redirect_to events_path

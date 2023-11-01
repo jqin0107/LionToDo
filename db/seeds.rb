@@ -9,6 +9,11 @@ events = [{:title => 'Halloween Night', :tag => 'Others', :date => '31-Oct-2023'
 {:title => 'NWC Study', :tag => 'Computer Science', :date => '30-Oct-2023', :location=>'NWC'}
 ]
 
+users = [
+	{:user_name => 'tester1', :first_name => 'first tester1', :last_name => 'last tester1', :password => 'tstpwd1'},
+	{:user_name => 'tester2', :first_name => 'first tester2', :last_name => 'last tester2', :password => 'tstpwd2'}
+]
+
 events.each do |event|
   Event.create!(event)
 end
