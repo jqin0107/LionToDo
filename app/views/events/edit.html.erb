@@ -1,7 +1,7 @@
 <h2>Edit Existing Activity</h2>
 <%= form_tag event_path(@event), :method => :put do %>
   <%= label :event, :title, 'Event Title', :class => 'col-form-label' %>
-  <%= text_field :event, 'event_title', :class => 'form-control' %>
+  <%= text_field :event, 'title', :class => 'form-control' %>
   <%= label :event, :location, 'Location', :class => 'col-form-label' %>
   <%= text_field :event, 'location', :class => 'form-control' %>
   <%= label :event, :date, 'Date', :class => 'col-form-label' %>
