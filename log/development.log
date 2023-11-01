@@ -2596,3 +2596,419 @@ Processing by EventsController#index as HTML
   Rendered events/index.html.erb within layouts/application (2.2ms)
   Rendered layouts/_flash.erb (0.3ms)
 Completed 200 OK in 204ms (Views: 202.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BComputer+Science%5D=1&tags%5BSpeech%5D=1&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BOthers%5D=1&commit=Refresh" for ::1 at 2023-11-01 18:15:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Computer Science"=>"1", "Speech"=>"1", "Business"=>"1", "Career Fair"=>"1", "Others"=>"1"}, "commit"=>"Refresh"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 147ms (Views: 143.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BComputer+Science%5D=1&tags%5BSpeech%5D=1&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BOthers%5D=1&commit=Refresh" for ::1 at 2023-11-01 18:15:54 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Computer Science"=>"1", "Speech"=>"1", "Business"=>"1", "Career Fair"=>"1", "Others"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/new" for ::1 at 2023-11-01 18:15:55 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (32.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 48.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2023-11-01 18:16:02 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lB3/ZKvsGOwLif0QLoVtZAgFrWbExbqKlqmc+YsIps8Nu8dGmb5sQRcCpwE6jMlHuYZDWRJpAprmt/HT1+IuRg==", "event"=>{"event_name"=>"thnis", "tag"=>"Speech", "location"=>"sasasas", "date(1i)"=>"2023", "date(2i)"=>"11", "date(3i)"=>"1"}, "commit"=>"Save Changes"}
+Unpermitted parameters: event_name, tag
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 20ms (ActiveRecord: 0.9ms)
+
+ActiveRecord::RecordInvalid (Validation failed: Title can't be blank, Tag can't be blank):
+  app/controllers/events_controller.rb:46:in `create'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.3ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.2ms)
+
+
+Started POST "/events" for ::1 at 2023-11-01 18:18:33 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lB3/ZKvsGOwLif0QLoVtZAgFrWbExbqKlqmc+YsIps8Nu8dGmb5sQRcCpwE6jMlHuYZDWRJpAprmt/HT1+IuRg==", "event"=>{"event_name"=>"thnis", "tag"=>"Speech", "location"=>"sasasas", "date(1i)"=>"2023", "date(2i)"=>"11", "date(3i)"=>"1"}, "commit"=>"Save Changes"}
+Unpermitted parameters: event_name, tag
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 7ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordInvalid (Validation failed: Title can't be blank, Tag can't be blank):
+  app/controllers/events_controller.rb:46:in `create'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (11.5ms)
+
+
+Started POST "/events" for ::1 at 2023-11-01 18:19:51 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lB3/ZKvsGOwLif0QLoVtZAgFrWbExbqKlqmc+YsIps8Nu8dGmb5sQRcCpwE6jMlHuYZDWRJpAprmt/HT1+IuRg==", "event"=>{"event_name"=>"thnis", "tag"=>"Speech", "location"=>"sasasas", "date(1i)"=>"2023", "date(2i)"=>"11", "date(3i)"=>"1"}, "commit"=>"Save Changes"}
+Unpermitted parameters: event_name, tag
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/events_controller.rb:58:in `create'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (10.6ms)
+
+
+Started POST "/events" for ::1 at 2023-11-01 18:20:09 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lB3/ZKvsGOwLif0QLoVtZAgFrWbExbqKlqmc+YsIps8Nu8dGmb5sQRcCpwE6jMlHuYZDWRJpAprmt/HT1+IuRg==", "event"=>{"event_name"=>"thnis", "tag"=>"Speech", "location"=>"sasasas", "date(1i)"=>"2023", "date(2i)"=>"11", "date(3i)"=>"1"}, "commit"=>"Save Changes"}
+Unpermitted parameters: event_name, tag
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3004/events
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for ::1 at 2023-11-01 18:20:09 -0400
+Processing by EventsController#index as HTML
+Redirected to http://localhost:3004/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 18:20:09 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 18:20:52 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/new" for ::1 at 2023-11-01 18:20:54 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2023-11-01 18:20:59 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MIVd44+dEpIEP5rXUl/cerqDyXNlmateJmb5+tL3KzSpI2XBvc9mPxi0wMZGVnhZCwAnTLM1E05WeJTQjh2jvQ==", "event"=>{"event_name"=>"asas", "tag"=>"Computer Science", "location"=>"asas", "date(1i)"=>"2023", "date(2i)"=>"11", "date(3i)"=>"1"}, "commit"=>"Save Changes"}
+Unpermitted parameters: event_name, tag
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/events_controller.rb:58:in `create'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (12.1ms)
+
+
+Started POST "/events" for ::1 at 2023-11-01 18:24:05 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MIVd44+dEpIEP5rXUl/cerqDyXNlmateJmb5+tL3KzSpI2XBvc9mPxi0wMZGVnhZCwAnTLM1E05WeJTQjh2jvQ==", "event"=>{"event_name"=>"asas", "tag"=>"Computer Science", "location"=>"asas", "date(1i)"=>"2023", "date(2i)"=>"11", "date(3i)"=>"1"}, "commit"=>"Save Changes"}
+Unpermitted parameters: event_name, tag
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3004/events
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for ::1 at 2023-11-01 18:24:06 -0400
+Processing by EventsController#index as HTML
+Redirected to http://localhost:3004/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 18:24:06 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/new" for ::1 at 2023-11-01 18:24:09 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2023-11-01 18:24:18 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bATVvblkmXuBG7k62W5+ELwx6/Ub7zHXJ+uiKwPOOur1ou2fizbt1p2Q4yvNZ9ozDbIFys1DicdX9c8BXySyYw==", "event"=>{"event_name"=>"abc", "tag"=>"Computer Science", "location"=>"this place", "date(1i)"=>"2023", "date(2i)"=>"11", "date(3i)"=>"2"}, "commit"=>"Save Changes"}
+Unpermitted parameters: event_name, tag
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3004/events
+Completed 302 Found in 10ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for ::1 at 2023-11-01 18:24:18 -0400
+Processing by EventsController#index as HTML
+Redirected to http://localhost:3004/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 18:24:18 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "tag", "date", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Halloween Night"], ["tag", "Others"], ["date", "2023-10-31 00:00:00.000000"], ["location", "Mudd"], ["created_at", "2023-11-01 22:26:06.263980"], ["updated_at", "2023-11-01 22:26:06.263980"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "tag", "date", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "NWC Study"], ["tag", "Computer Science"], ["date", "2023-10-30 00:00:00.000000"], ["location", "NWC"], ["created_at", "2023-11-01 22:26:06.265708"], ["updated_at", "2023-11-01 22:26:06.265708"]]
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "tag" varchar, "date" datetime, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "first_name" varchar, "last_name" varchar, "password_digest" varchar) 
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20231101204210')[0m
+
+
+Started GET "/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 18:26:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (18.6ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `event_name' for #<Event:0x000000012de444f8>):
+    40:     <% @events.each do |event| %>
+    41:       <tr>
+    42:         <td>
+    43:           <%= link_to "#{event.event_name}", event_path(event) %>
+    44:         </td>
+    45:         <td>
+    46:           <%= event.tag %>
+  app/views/events/index.html.erb:43:in `block in _app_views_events_index_html_erb___4188127856941408335_2531853560'
+  app/views/events/index.html.erb:40:in `_app_views_events_index_html_erb___4188127856941408335_2531853560'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.0ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.9ms)
+
+
+Started GET "/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 18:27:07 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (38.4ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `event_name' for #<Event:0x000000012da073b8>):
+    40:     <% @events.each do |event| %>
+    41:       <tr>
+    42:         <td>
+    43:           <%= link_to "#{event.event_name}", event_path(event) %>
+    44:         </td>
+    45:         <td>
+    46:           <%= event.tag %>
+  app/views/events/index.html.erb:43:in `block in _app_views_events_index_html_erb___4188127856941408335_2529869700'
+  app/views/events/index.html.erb:40:in `_app_views_events_index_html_erb___4188127856941408335_2529869700'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.7ms)
+
+
+Started GET "/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 18:27:09 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (37.4ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `event_name' for #<Event:0x000000012efe5fe0>):
+    40:     <% @events.each do |event| %>
+    41:       <tr>
+    42:         <td>
+    43:           <%= link_to "#{event.event_name}", event_path(event) %>
+    44:         </td>
+    45:         <td>
+    46:           <%= event.tag %>
+  app/views/events/index.html.erb:43:in `block in _app_views_events_index_html_erb___4188127856941408335_2529869700'
+  app/views/events/index.html.erb:40:in `_app_views_events_index_html_erb___4188127856941408335_2529869700'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.6ms)
+
+
+Started GET "/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 18:27:10 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (35.4ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `event_name' for #<Event:0x000000012eee20f8>):
+    40:     <% @events.each do |event| %>
+    41:       <tr>
+    42:         <td>
+    43:           <%= link_to "#{event.event_name}", event_path(event) %>
+    44:         </td>
+    45:         <td>
+    46:           <%= event.tag %>
+  app/views/events/index.html.erb:43:in `block in _app_views_events_index_html_erb___4188127856941408335_2529869700'
+  app/views/events/index.html.erb:40:in `_app_views_events_index_html_erb___4188127856941408335_2529869700'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.6ms)
+
+
+Started GET "/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 18:27:28 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 237ms (Views: 233.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/2" for ::1 at 2023-11-01 18:27:32 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (29.9ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `event_name' for #<Event:0x000000010385ed88>):
+    1: <!--  app/views/activities/show.html.erb -->
+    2: <h2>Details about <em><%= @event.event_name %></em></h2>
+    3: 
+    4: <ul id="details">
+    5:   <li>
+  app/views/events/show.html.erb:2:in `_app_views_events_show_html_erb__2079853369284475863_2177035200'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.0ms)
+
+
+Started GET "/events/2" for ::1 at 2023-11-01 18:27:55 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (85.0ms)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `edit_eventy_path' for #<#<Class:0x000000012dc75ac8>:0x00000001018414b0>
+Did you mean?  edit_event_path):
+    23: 
+    24: <div class="row">
+    25: 
+    26:   <%= link_to 'Edit', edit_eventy_path(@event), :class => 'btn btn-primary col-2' %>
+    27:   <%= link_to 'Delete', event_path(@event), 'data-method' => 'delete', 'data-confirm' => 'Delete this event?', :class => 'btn btn-danger col-2' %>
+    28:   
+    29:   <%= link_to 'Back to events list', events_path, :class => 'btn btn-primary col-2' %>
+  app/views/events/show.html.erb:26:in `_app_views_events_show_html_erb__2079853369284475863_2160198120'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.7ms)
+
+
+Started GET "/events/2" for ::1 at 2023-11-01 18:28:07 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/events/2" for ::1 at 2023-11-01 18:28:09 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"A/uWJVRArTg6rJzOTuzu8UsRBDsnb0a+OVfGNzVq9T+aXa4HZhLZlSYnxt9a5UrS+pLqBPHD/q5JSasdaYB9tg==", "id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 2]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.8ms)
+
+NoMethodError (undefined method `event_name' for #<Event:0x000000012f63d9d8>):
+  app/controllers/events_controller.rb:91:in `destroy'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (10.8ms)
+
+
+Started DELETE "/events/2" for ::1 at 2023-11-01 18:28:36 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"A/uWJVRArTg6rJzOTuzu8UsRBDsnb0a+OVfGNzVq9T+aXa4HZhLZlSYnxt9a5UrS+pLqBPHD/q5JSasdaYB9tg==", "id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=2):
+  app/controllers/events_controller.rb:89:in `destroy'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (10.7ms)
