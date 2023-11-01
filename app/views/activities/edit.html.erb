@@ -1,18 +1,12 @@
 <h2>Edit Existing Activity</h2>
-<%= form_tag activity_path(@activity), :method => :put do %>
-  <%= label :activity, :event_name, 'Event Name', :class => 'col-form-label' %>
-  <%= text_field :activity, 'event_name', :class => 'form-control' %>
-  <%= label :activity, :max_size, 'Max Size', :class => 'col-form-label' %>
-  <%= text_field :activity, 'max_size', :class => 'form-control' %>
-  <%= label :activity, :current_size, 'Current Size', :class => 'col-form-label' %>
-  <%= text_field :activity, 'current_size', :class => 'form-control' %>
-  <%= label :activity, :location, 'Location', :class => 'col-form-label' %>
-  <%= text_field :activity, 'location', :class => 'form-control' %>
-  <%= label :activity, :date, 'Date', :class => 'col-form-label' %>
-  <%= text_field :activity, 'date', :class => 'form-control' %>
-  <%= label :activity, :open_status, 'Status', :class => 'col-form-label'  %>
-  <%= select :activity, :open_status, ['Open', 'Close'], {}, {:class => 'form-control col-1'} %>
+<%= form_tag event_path(@event), :method => :put do %>
+  <%= label :event, :title, 'Event Title', :class => 'col-form-label' %>
+  <%= text_field :event, 'event_title', :class => 'form-control' %>
+  <%= label :event, :location, 'Location', :class => 'col-form-label' %>
+  <%= text_field :event, 'location', :class => 'form-control' %>
+  <%= label :event, :date, 'Date', :class => 'col-form-label' %>
+  <%= text_field :event, 'date', :class => 'form-control' %>
   <br/>
-  <%= submit_tag 'Update Activity Info', :class => 'btn btn-primary' %>
-  <%= link_to 'Cancel', activities_path, :class => 'btn btn-secondary' %>
+  <%= submit_tag 'Update Event Info', :class => 'btn btn-primary' %>
+  <%= link_to 'Cancel', events_path, :class => 'btn btn-secondary' %>
 <% end %>
