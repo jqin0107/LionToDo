@@ -29,11 +29,10 @@
       <th>Tag</th>
       <th>
       <%= link_to 'Date',
-              activities_path({sort_by: 'date', ratings: @tags_to_show_hash}),
+              events_path({sort_by: 'date', ratings: @tags_to_show_hash}),
               id: 'date_header', class: ('bg-warning hilite' if @sort_by == 'date') %>
       </th>
       <th>Location</th>
-      <th>Status</th>
       <th>Finished?</th>
     </tr>
   </thead>
@@ -41,7 +40,7 @@
     <% @events.each do |event| %>
       <tr>
         <td>
-          <%= link_to "#{activity.event_name}", activity_path(activity) %>
+          <%= link_to "#{event.event_name}", event_path(event) %>
         </td>
         <td>
           <%= event.tag %>
@@ -52,21 +51,9 @@
         <td>
           <%= event.location %>
         </td>
-        <td>
-          <%= event.open_status %>
-        </td>
-        <td>
-            <% if participated(event) then %>
-            <%= link_to 'Yes!!', relation_path(user_id: session[:user_id], activity_id: activity.id, id: activity.id), :method => 'delete', :class => 'btn btn-primary' %>
-            <% else %>
-            <%= link_to 'Nah', relations_path(user_id: session[:user_id], activity_id: activity.id), :method => 'post', :class => 'btn btn-danger' %>
-            <% end %>
-        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Add new activity', new_activity_path, :class => 'btn btn-primary' %>
-<%= link_to 'Go to User profile', user_path(session[:user_id]), :class => 'btn btn-primary' %>
-<%= link_to 'My Followings', following_index_path, :class => 'btn btn-primary' %>
+<%= link_to 'Add new event', new_event_path, :class => 'btn btn-primary' %>
 
