@@ -1,47 +1,30 @@
 <!--  app/views/activities/show.html.erb -->
-<h2>Details about <em><%= @activity.event_name %></em></h2>
+<h2>Details about <em><%= @event.event_name %></em></h2>
 
 <ul id="details">
   <li>
     Category:
-    <%= @activity.category %>
+    <%= @event.tag %>
   </li>
   <li>
     Location:
-    <%= @activity.location %>
+    <%= @event.location %>
   </li>
   <li>
     Date:
-    <%= @activity.date %>
+    <%= @event.date %>
   </li>
   <li>
-    Maximum size:
-    <%= @activity.max_size %>
+    Description: <to be filled>
   </li>
-  <li>
-    Current number of participants:
-    <%= @activity.current_size %>
-  </li>
-  <li>
-    Description:
-    <%= @activity.description %>
-  </li>
-  <li>
-    Status:
-    <%= @activity.open_status %>
-  </li>
+
 </ul>
 
 
 <div class="row">
-  <% if can_modify(@activity) then %>
-  <%= link_to 'Edit', edit_activity_path(@activity), :class => 'btn btn-primary col-2' %>
-  <%= link_to 'Delete', activity_path(@activity), 'data-method' => 'delete', 'data-confirm' => 'Are you sure?', :class => 'btn btn-danger col-2' %>
-  <% end %>
-  <% if participated(@activity) then %>
-  <%= link_to 'Leave!', relation_path(user_id: session[:user_id], activity_id: @activity.id), :method => 'delete', :class => 'btn btn-primary col-2' %>
-  <% elsif @activity.open_status == 'Open' %>
-  <%= link_to 'Participate!', relations_path(user_id: session[:user_id], activity_id: @activity.id), :method => 'post', :class => 'btn btn-danger col-2' %>
-  <% end %>
-  <%= link_to 'Back to activities list', activities_path, :class => 'btn btn-primary col-2' %>
+
+  <%= link_to 'Edit', edit_eventy_path(@event), :class => 'btn btn-primary col-2' %>
+  <%= link_to 'Delete', event_path(@event), 'data-method' => 'delete', 'data-confirm' => 'Delete this event?', :class => 'btn btn-danger col-2' %>
+  
+  <%= link_to 'Back to events list', events_path, :class => 'btn btn-primary col-2' %>
 </div>
