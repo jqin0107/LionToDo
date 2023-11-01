@@ -1,0 +1,95 @@
+<h2>Activity Board</h2>
+
+
+
+
+
+
+<%= form_tag activities_path, method: :get, id: 'categories_form' do %>
+  <%= hidden_field_tag 'sort_by', @sort_by %>
+
+  <div class="form-check  form-check-inline">
+    <%= label_tag "active activities", "active activities", class: 'form-check-label' %>
+    <%= check_box_tag "event_status", 'Open', @open_status, class: 'form-check-input' %>
+  </div>
+
+
+
+
+  Include:
+  <% @all_categories.each do |category| %>
+    <div class="form-check  form-check-inline">
+      <%= label_tag "categories[#{category}]", category, class: 'form-check-label' %>
+      <%= check_box_tag "categories[#{category}]", '1', (@categories_hash.include?(category)),
+        class: 'form-check-input' %>
+    </div>
+  <% end %>
+  <%= submit_tag 'Refresh', id: 'categories_submit', class: 'btn btn-primary' %>
+<% end %>
+
+
+
+
+
+<table class="table table-striped col-md-12" id="activities">
+  <thead>
+    <tr>
+      <th>
+      <%= link_to 'Event Name', activities_path({sort_by: 'event_name', ratings: @categories_to_show_hash}),
+                      id: 'name_header', class: ('bg-warning hilite' if @sort_by == 'event_name') %>
+      </th>
+      <th>Organizer</th>
+      <th>Max Capcity</th>
+      <th>Current Number of Participants</th>
+      <th>Category</th>
+      <th>
+      <%= link_to 'Date',
+              activities_path({sort_by: 'date', ratings: @categories_to_show_hash}),
+              id: 'date_header', class: ('bg-warning hilite' if @sort_by == 'date') %>
+      </th>
+      <th>Location</th>
+      <th>Status</th>
+      <th>Participating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td>
+          <%= link_to "#{activity.event_name}", activity_path(activity) %>
+        </td>
+        <td>
+          <%= link_to "#{get_organizor_name(activity)}",  user_path(activity.creator_id) %>
+        </td>
+        <td>
+          <%= activity.max_size %>
+        </td>
+        <td>
+          <%= activity.current_size %>
+        </td>
+        <td>
+          <%= activity.category %>
+        </td>
+        <td>
+          <%= activity.date %>
+        </td>
+        <td>
+          <%= activity.location %>
+        </td>
+        <td>
+          <%= activity.open_status %>
+        </td>
+        <td>
+            <% if participated(activity) then %>
+            <%= link_to 'Yes!!', relation_path(user_id: session[:user_id], activity_id: activity.id, id: activity.id), :method => 'delete', :class => 'btn btn-primary' %>
+            <% else %>
+            <%= link_to 'Nah', relations_path(user_id: session[:user_id], activity_id: activity.id), :method => 'post', :class => 'btn btn-danger' %>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Add new activity', new_activity_path, :class => 'btn btn-primary' %>
+<%= link_to 'Go to User profile', user_path(session[:user_id]), :class => 'btn btn-primary' %>
+<%= link_to 'My Followings', following_index_path, :class => 'btn btn-primary' %>
