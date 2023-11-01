@@ -14,15 +14,15 @@ Background: events in database
   | Event4    | Lerner   | Career Fair      |   2023-11-11 |
 
 Given my account is:
-  | email                  | password      | 
-  | saas@columbia.edu      | group25       | 
+| user_name    | first_name | last_name | password |
+| aaa          | bbb        | ccc       | ddd      |
 
 Scenario: Log in to my user page
   When I go to the login page
-  And  I fill in "Email" with "saas@columbia.edu"
-  And  I fill in "Password" with "group25"
+  And  I fill in "Username" with "aaa"
+  And  I fill in "Password" with "ddd"
   And  I press "Login"
-  Then I should see "My To-do List"
+  Then I should see "Event Board"
 
 Scenario: create new events with tags
   When I go to the new page
