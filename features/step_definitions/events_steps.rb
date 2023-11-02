@@ -27,5 +27,5 @@ end
 Then /^the tags of "(.+)" should be "(.+)"/ do |title, tags|
   event = Event.find_by_title(title)
   visit event_path(event)
-  expect(page.body).to match(/Tags: #{tags}/)
+  expect(page.body).to match(/Tag: #{tags}/)
 end

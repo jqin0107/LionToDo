@@ -10,26 +10,11 @@ class EventsController < ApplicationController
 
       def index
         @events = Event.all
-        # for e in @events do
-        #   if e[:date] < Date.today
-        #     e.update(open_status: 'Close')
-        #   end
-        #end
-
-        #@event_status = params[:event_status]
         @all_tags = Event.all_tags
         @events_with_tag = Event.with_tags(tag_list, sort_by)
-        # if @event_status == 'Open'
-        #   @events = open_events(@events_with_tag)
-        # else
-        #   @events = @events_with_tag
-        # end
-
-
 
         @tags_hash = tags_hash
         @sort_by = sort_by
-
 
         session['tags'] = tag_list
         session['sort_by'] = @sort_by
@@ -43,18 +28,18 @@ class EventsController < ApplicationController
       end
     
       def create
-        # @event = Event.create!(event_params)
-        #@event.update(creator_id: session[:user_id])
-        # flash[:notice] = "#{@event.title} was successfully created."
-        begin
-          @event = Event.create!(event_params)
-          @event.update(creator_id: session[:user_id])
-        rescue => exception
-          flash[:notice] = "Cannot contain empty field."
-        else
-          flash[:notice] = "#{@event.title} was successfully created."
+        @event = Event.create!(event_params)
+        @event.update(creator_id: session[:user_id])
+        flash[:notice] = "#{@event.title} was successfully created."
+        # begin
+        #   @event = Event.create!(event_params)
+        #   @event.update(creator_id: session[:user_id])
+        # rescue => exception
+        #   flash[:notice] = "Cannot contain empty field."
+        # else
+        #   flash[:notice] = "#{@event.title} was successfully created."
 
-        end
+        # end
         #ActivityUserRelation.create!(session[:user_id], @event.id)
         
         redirect_to events_path
@@ -62,26 +47,12 @@ class EventsController < ApplicationController
     
       def edit
         @event = Event.find params[:id]
-        # if !can_modify(@event)
-        #   flash[:warning] = "You aren't authorized to modify this event!"
-        #   redirect_to event_path(@event)
-        # end
       end
     
       def update
         @event = Event.find params[:id]
         @event.update_attributes!(event_params)
         flash[:notice] = "#{@event.title} was successfully updated."
-        # if can_modify(@event)
-        #   begin 
-        #     @event.update_attributes!(event_params)
-        #   rescue => exception
-        #     flash[:notice] = "Some fields are empty, event cannot be updated."
-        #   else
-        #     flash[:notice] = "#{@event.event_name} was successfully updated."
-            
-        #   end
-        # end
         redirect_to event_path(@event)
       end
     
@@ -89,10 +60,6 @@ class EventsController < ApplicationController
         @event = Event.find(params[:id])
         @event.destroy
         flash[:notice] = "Event '#{@event.title}' deleted."
-        # if can_modify(@event)
-        #   @event.destroy
-        #   flash[:notice] = "Event '#{@event.event_name}' deleted."
-        # end
         redirect_to events_path
       end
     
