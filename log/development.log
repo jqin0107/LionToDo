@@ -5149,3 +5149,386 @@ Completed 200 OK in 43ms (Views: 39.9ms | ActiveRecord: 0.2ms)
   [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20231101204210')
   [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221109213751')[0m
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "activity_user_relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "activity_id" integer) [0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "tag" varchar, "date" datetime, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "first_name" varchar, "last_name" varchar, "password_digest" varchar) [0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20231101204210')
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:07:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"title", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 156ms (Views: 151.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/new" for ::1 at 2023-11-01 20:07:21 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (33.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2023-11-01 20:07:26 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8uR5L7GA5tnqE+RmiYOGtQ0vcAOcTmVL5Msxq8C2ms9rQkENg9KSdPaYvnediiKWvKyePEri3VuU1VyBnFwSRg==", "event"=>{"title"=>"1", "tag"=>"Computer Science", "location"=>"2", "date(1i)"=>"2023", "date(2i)"=>"11", "date(3i)"=>"2"}, "commit"=>"Save Changes"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "1"], ["location", "2"], ["tag", "Computer Science"], ["date", "2023-11-02 00:00:00.000000"], ["created_at", "2023-11-02 00:07:26.500345"], ["updated_at", "2023-11-02 00:07:26.500345"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3010/events
+Completed 302 Found in 12ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for ::1 at 2023-11-01 20:07:26 -0400
+Processing by EventsController#index as HTML
+Redirected to http://localhost:3010/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:07:26 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"title", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:07:42 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"title", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 76ms (Views: 73.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for ::1 at 2023-11-01 20:08:02 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mActivityUserRelation Load (0.1ms)[0m  [1mSELECT "activity_user_relations".* FROM "activity_user_relations" WHERE "activity_user_relations"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 17.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2023-11-01 20:08:04 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/1" for ::1 at 2023-11-01 20:08:06 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zITzSmq2Nz46HOiY2BkB1O8UxvFsU5C7pHI05suslrVVIstoWORDkyaXsonMEKX3Xpcozrr/KKvUbFnMl0YePA==", "user"=>{"first_name"=>"bbb", "last_name"=>"c", "password"=>"[FILTERED]"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."user_name" = 'aaa' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_name" = ? WHERE "users"."id" = ?  [["last_name", "c"], ["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3010/users/1
+Completed 302 Found in 26ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users/1" for ::1 at 2023-11-01 20:08:06 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mActivityUserRelation Load (0.1ms)[0m  [1mSELECT "activity_user_relations".* FROM "activity_user_relations" WHERE "activity_user_relations"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2023-11-01 20:08:08 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3010/events
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for ::1 at 2023-11-01 20:08:08 -0400
+Processing by EventsController#index as HTML
+Redirected to http://localhost:3010/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:08:08 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"title", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/8" for ::1 at 2023-11-01 20:08:11 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered events/show.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/events/8" for ::1 at 2023-11-01 20:08:13 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dac9Mt5vf4d9A54OtFWjvf5LikbmSrLHFuWxy7ihrKPsAQUQ7D0LKmGIxB+gXAeeT8hkeTDmCtdm+9zh5EskKg==", "id"=>"8"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3010/events
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/events" for ::1 at 2023-11-01 20:08:13 -0400
+Processing by EventsController#index as HTML
+Redirected to http://localhost:3010/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:08:13 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"title", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/7" for ::1 at 2023-11-01 20:08:16 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered events/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/events/7" for ::1 at 2023-11-01 20:08:19 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WiuGv6OuiZaXx3p+AbAutMCf85xKruPstKW7tEnDdQDDjb6dkfz9O4tMIG8VuYqXcRwdo5wCW/zEu9aeFSn9iQ==", "id"=>"7"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 7]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3010/events
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/events" for ::1 at 2023-11-01 20:08:19 -0400
+Processing by EventsController#index as HTML
+Redirected to http://localhost:3010/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:08:19 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"title", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:09:12 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"title", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:09:13 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"title", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 39.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events?sort_by=title" for ::1 at 2023-11-01 20:09:16 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"title"}
+Redirected to http://localhost:3010/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=title&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:09:16 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"title", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events?sort_by=date" for ::1 at 2023-11-01 20:09:17 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"date"}
+Redirected to http://localhost:3010/events?sort_by=date&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=date&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:09:17 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"date", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 43.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events?sort_by=date" for ::1 at 2023-11-01 20:09:20 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"date"}
+Redirected to http://localhost:3010/events?sort_by=date&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=date&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:09:20 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"date", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/new" for ::1 at 2023-11-01 20:09:23 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2023-11-01 20:09:23 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hsz3kMcARAmhWlfunYPOtzpv9CiOjdmbB/frlklYbxGHas+y9VIwpL3RDf+JimqUi+waF1ghYYt36Ya8FbLnmA==", "event"=>{"title"=>"", "tag"=>"Computer Science", "location"=>"", "date(1i)"=>"2023", "date(2i)"=>"11", "date(3i)"=>"2"}, "commit"=>"Save Changes"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/events_controller.rb:58:in `create'
+
+
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/ireneisabug/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (11.1ms)
+
+
+Started GET "/events/new" for ::1 at 2023-11-01 20:09:39 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=date&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:09:40 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"date", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 30.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/new" for ::1 at 2023-11-01 20:09:41 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2023-11-01 20:09:45 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5nT8UATTz5bWAo0z4w7FY7x7Q/36Cejcd41G2PS10td/0sRyNoG7O8qJ1yL3B2FADfitwiylUMwHkyvyqF9aXg==", "event"=>{"title"=>"ds", "tag"=>"Computer Science", "location"=>"ds", "date(1i)"=>"2023", "date(2i)"=>"11", "date(3i)"=>"2"}, "commit"=>"Save Changes"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "ds"], ["location", "ds"], ["tag", "Computer Science"], ["date", "2023-11-02 00:00:00.000000"], ["created_at", "2023-11-02 00:09:45.124520"], ["updated_at", "2023-11-02 00:09:45.124520"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3010/events
+Completed 302 Found in 13ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/events" for ::1 at 2023-11-01 20:09:45 -0400
+Processing by EventsController#index as HTML
+Redirected to http://localhost:3010/events?sort_by=date&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=date&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:09:45 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"date", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/new" for ::1 at 2023-11-01 20:09:47 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2023-11-01 20:09:48 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mtzyGiUTlz+osalEdeAowqKlUfTGl8jR1YPCpjU/aKgDeso4F0HjkrQ681Vh6YzhEya/yxA7cMGlna+MadXgIQ==", "event"=>{"title"=>"", "tag"=>"Computer Science", "location"=>"", "date(1i)"=>"2023", "date(2i)"=>"11", "date(3i)"=>"2"}, "commit"=>"Save Changes"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3010/events
+Completed 302 Found in 11ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for ::1 at 2023-11-01 20:09:48 -0400
+Processing by EventsController#index as HTML
+Redirected to http://localhost:3010/events?sort_by=date&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?sort_by=date&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:09:48 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"date", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events?sort_by=date&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1" for ::1 at 2023-11-01 20:10:13 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"date", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.3ms)
