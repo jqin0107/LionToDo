@@ -30827,3 +30827,1284 @@ Processing by UsersController#new as HTML
   Rendered layouts/_flash.erb (0.2ms)
 Completed 200 OK in 3ms (Views: 3.3ms | ActiveRecord: 0.0ms)
   [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event1"], ["location", "Mudd"], ["tag", "Computer Science"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:18.997902"], ["updated_at", "2023-11-02 03:08:18.997902"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event2"], ["location", "NWC"], ["tag", "Speech"], ["date", "2023-11-26 00:00:00.000000"], ["created_at", "2023-11-02 03:08:18.999719"], ["updated_at", "2023-11-02 03:08:18.999719"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event3"], ["location", "Uris"], ["tag", "Business"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.001040"], ["updated_at", "2023-11-02 03:08:19.001040"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event4"], ["location", "Lerner"], ["tag", "Career Fair"], ["date", "2023-11-11 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.002345"], ["updated_at", "2023-11-02 03:08:19.002345"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'aaa' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "aaa"], ["first_name", "bbb"], ["last_name", "ccc"], ["password_digest", "$2a$04$abyuBuO/VS8I/fNG3qcuXeM7exopCH7UZ1NY0p38quAH9wkB26np2"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'eee' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "eee"], ["first_name", "fff"], ["last_name", "ggg"], ["password_digest", "$2a$04$deVsf9KG4MLCl0K0oOiS0OCy6/pztLJgkpftdDaMdCVreZ.NsW.Bq"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_flash.erb (3.1ms)
+Completed 200 OK in 153ms (Views: 152.6ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"aaa", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "aaa"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event1"], ["location", "Mudd"], ["tag", "Computer Science"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.248991"], ["updated_at", "2023-11-02 03:08:19.248991"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event2"], ["location", "NWC"], ["tag", "Speech"], ["date", "2023-11-26 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.250561"], ["updated_at", "2023-11-02 03:08:19.250561"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event3"], ["location", "Uris"], ["tag", "Business"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.251873"], ["updated_at", "2023-11-02 03:08:19.251873"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event4"], ["location", "Lerner"], ["tag", "Career Fair"], ["date", "2023-11-11 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.253176"], ["updated_at", "2023-11-02 03:08:19.253176"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'aaa' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "aaa"], ["first_name", "bbb"], ["last_name", "ccc"], ["password_digest", "$2a$04$LruGFJAsSlV8kgpsbZhFgeUggCbiCAngDq.9GktmOhqqsKXbkjS2y"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'eee' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "eee"], ["first_name", "fff"], ["last_name", "ggg"], ["password_digest", "$2a$04$G03QqSgA2momRvP.BNVr8eG6YfU0D.AFgZuiNhOCSdC7EihIIxSeW"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"aaa", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "aaa"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event1"], ["location", "Mudd"], ["tag", "Computer Science"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.337745"], ["updated_at", "2023-11-02 03:08:19.337745"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event2"], ["location", "NWC"], ["tag", "Speech"], ["date", "2023-11-26 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.339288"], ["updated_at", "2023-11-02 03:08:19.339288"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event3"], ["location", "Uris"], ["tag", "Business"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.340594"], ["updated_at", "2023-11-02 03:08:19.340594"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event4"], ["location", "Lerner"], ["tag", "Career Fair"], ["date", "2023-11-11 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.341886"], ["updated_at", "2023-11-02 03:08:19.341886"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'aaa' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "aaa"], ["first_name", "bbb"], ["last_name", "ccc"], ["password_digest", "$2a$04$4XWsF1Fxkp9IloQJPFf1MOqy0.anYt8ZPJsIr.4qH2E8f4RIf6rjK"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'eee' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "eee"], ["first_name", "fff"], ["last_name", "ggg"], ["password_digest", "$2a$04$Z6MIJqexNtons7jdT7IfH.aaMiXURsJgn1x2r13QMah4cWxJw38Ce"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"aaa", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "aaa"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event1"], ["location", "Mudd"], ["tag", "Computer Science"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.395150"], ["updated_at", "2023-11-02 03:08:19.395150"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event2"], ["location", "NWC"], ["tag", "Speech"], ["date", "2023-11-26 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.396733"], ["updated_at", "2023-11-02 03:08:19.396733"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event3"], ["location", "Uris"], ["tag", "Business"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.398127"], ["updated_at", "2023-11-02 03:08:19.398127"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event4"], ["location", "Lerner"], ["tag", "Career Fair"], ["date", "2023-11-11 00:00:00.000000"], ["created_at", "2023-11-02 03:08:19.399413"], ["updated_at", "2023-11-02 03:08:19.399413"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'aaa' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "aaa"], ["first_name", "bbb"], ["last_name", "ccc"], ["password_digest", "$2a$04$066Q79mYP4BWVk2HtQfhuuIF0anB2/MRJntXEueiqa2.Jo3IH/iSC"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'eee' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "eee"], ["first_name", "fff"], ["last_name", "ggg"], ["password_digest", "$2a$04$68AqLGi0XZbT3XAMGyZ80.AaJD3EEk4DMz3ig9RdT2TO5Hf4unF1a"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"aaa", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "aaa"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester1' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "tester1"], ["first_name", "tfn1"], ["last_name", "tln1"], ["password_digest", "$2a$04$J9FqhlCPxw8AvYwDB8FAuOJ8hxg4jpKXedXGB4tO3zTihsj/7j2cG"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester2' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "tester2"], ["first_name", "tfn2"], ["last_name", "tln2"], ["password_digest", "$2a$04$LshudNW6Wx3D4E.MteTIP.XvUazsu5Z8cDhf76GQQNnFTzIxakbLC"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"tester1", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "tester1"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester1' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "tester1"], ["first_name", "tfn1"], ["last_name", "tln1"], ["password_digest", "$2a$04$bEsTH0E3/YMk9TOTjErCZuC.pEMTnRsMX015JkK9XqRlrXNnjZcQW"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester2' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "tester2"], ["first_name", "tfn2"], ["last_name", "tln2"], ["password_digest", "$2a$04$q4.bLMlXKTTWq8xDjc50xephC5iBGASj5OnSSwXR25GeI3ZQQR5gu"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"tester1", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "tester1"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester1' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "tester1"], ["first_name", "tfn1"], ["last_name", "tln1"], ["password_digest", "$2a$04$RhTnf9kpgVfCNWXxDGS8zuxrOMLgYt9xmT33gTrCCwygXsP5p3XXS"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester2' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "tester2"], ["first_name", "tfn2"], ["last_name", "tln2"], ["password_digest", "$2a$04$mRhUQPkZYszgGlVV94ybqOEZ5po4MbBKxfncx6IswgF/dNjJsuRaS"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"tester1", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "tester1"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user1' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "user1"], ["first_name", "uu"], ["last_name", "ul1"], ["password_digest", "$2a$04$ucqEykfztUcWIf6YEo3g5OtQGv3agnBdxA7W0m8mt4UvA7Jtt9Hsq"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user2' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "user2"], ["first_name", "bb"], ["last_name", "ul2"], ["password_digest", "$2a$04$qJPt5zz0oHfi5MrTeXuSQedenQkiS.tHX0L3EBg9x5bNHteflHiKC"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#index as HTML
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user1' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "user1"], ["first_name", "uu"], ["last_name", "ul1"], ["password_digest", "$2a$04$vHrQpAJMrpSju3B.qqSSSemMpibvu2Gh.pXQvZkRe4c83Bv.1MCD6"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user2' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "user2"], ["first_name", "bb"], ["last_name", "ul2"], ["password_digest", "$2a$04$WoXJs948BpB5lD2FtPN20u3.CPEtTWR9V/2PpdcVA1GdKzDYeYXVC"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "user1"]]
+Started GET "/users/1/edit" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://www.example.com/sessions/new
+Filter chain halted as :user_authenticate rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user1' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "user1"], ["first_name", "uu"], ["last_name", "ul1"], ["password_digest", "$2a$04$hEFeu.XrnK3wfRL4jYi8lO6ICXKioiMmZEP4MBuxzubngUYa.DHkG"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user2' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "user2"], ["first_name", "bb"], ["last_name", "ul2"], ["password_digest", "$2a$04$.yDHuCQBkz1gu1TpuRltr.HV5ZbyLUF1eeuDJJO0TlN9dtM5Fcjei"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/sessions/new
+Filter chain halted as :user_authenticate rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.8ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user1' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "user1"], ["first_name", "uu"], ["last_name", "ul1"], ["password_digest", "$2a$04$Vbsq0QXMEfRRUQlAImaRru.dXQqpo3cS1cj.5pA2KQM6oekO8JEHe"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user2' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "user2"], ["first_name", "bb"], ["last_name", "ul2"], ["password_digest", "$2a$04$h0kouCjrV.YA54jVvychp.NOe6Kx4feaDZHe3Mi2oUi9npBGpt492"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "user1"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user1' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "user1"], ["first_name", "uu"], ["last_name", "ul1"], ["password_digest", "$2a$04$bmptdgNoKM6pXj8jjbilzeBGBWzq8Ktuy/E0mgA9YFCy7G0is.8ru"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user2' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "user2"], ["first_name", "bb"], ["last_name", "ul2"], ["password_digest", "$2a$04$NdezNgItTNLqro/p5KEBdeDvav8H2VOBDJk6nESvS5UXVxe9ybnVS"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"user2", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "user2"]]
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'u1' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "u1"], ["first_name", "f1"], ["last_name", "l1"], ["password_digest", "$2a$04$ZS4/eavMz1ajmE3DlPYVIOYwHZlLq6/b.46gZ9hvpVcAMQQPJ24h2"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'u2' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "u2"], ["first_name", "f2"], ["last_name", "l2"], ["password_digest", "$2a$04$OBSWxBgvfTx6v66Qps4iQuHMVqAizjVkN44TDsYMRdsI6r4he3UI6"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"tester3", "first_name"=>"f3", "last_name"=>"l3", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester3' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "tester3"], ["first_name", "f3"], ["last_name", "l3"], ["password_digest", "$2a$04$JawkTVJxcuEf43kIeVkGF.o.6vNTDM6hplmLdD7LpGKyaeXCeBA/K"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'u1' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "u1"], ["first_name", "f1"], ["last_name", "l1"], ["password_digest", "$2a$04$z8sYX6xTbJJLlB2m8NftL.nfBf6vf5aIlF2tZlcC8RyqoOi0N4jBa"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'u2' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "u2"], ["first_name", "f2"], ["last_name", "l2"], ["password_digest", "$2a$04$OEvRG0RhOVqcVS4.3I4CY.shRYPhZQGzWu1Q5BN0Qsn.91DTjDhqy"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2023-11-01 23:08:19 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2023-11-01 23:08:20 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"u1", "first_name"=>"f1", "last_name"=>"l1", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'u1' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Redirected to http://www.example.com/users/new
+Completed 302 Found in 13ms (ActiveRecord: 0.1ms)
+Started GET "/users/new" for 127.0.0.1 at 2023-11-01 23:08:20 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event1"], ["location", "Mudd"], ["tag", "Computer Science"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.435404"], ["updated_at", "2023-11-02 03:08:33.435404"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event2"], ["location", "NWC"], ["tag", "Speech"], ["date", "2023-11-26 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.437428"], ["updated_at", "2023-11-02 03:08:33.437428"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event3"], ["location", "Uris"], ["tag", "Business"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.438774"], ["updated_at", "2023-11-02 03:08:33.438774"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event4"], ["location", "Lerner"], ["tag", "Career Fair"], ["date", "2023-11-11 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.440084"], ["updated_at", "2023-11-02 03:08:33.440084"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'aaa' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "aaa"], ["first_name", "bbb"], ["last_name", "ccc"], ["password_digest", "$2a$04$0/UY3AK4wZmV1Piew8LRu.jrJt8YZywrXDO2uxA8mxfvXJdzbWfBu"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'eee' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "eee"], ["first_name", "fff"], ["last_name", "ggg"], ["password_digest", "$2a$04$Pxw4LihRyVCSa.HeVrmKW.UndB3ovljfJ6NxhT8cAvfQPsbzDLPTu"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_flash.erb (3.1ms)
+Completed 200 OK in 153ms (Views: 152.5ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"aaa", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "aaa"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event1"], ["location", "Mudd"], ["tag", "Computer Science"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.675419"], ["updated_at", "2023-11-02 03:08:33.675419"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event2"], ["location", "NWC"], ["tag", "Speech"], ["date", "2023-11-26 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.676997"], ["updated_at", "2023-11-02 03:08:33.676997"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event3"], ["location", "Uris"], ["tag", "Business"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.678314"], ["updated_at", "2023-11-02 03:08:33.678314"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event4"], ["location", "Lerner"], ["tag", "Career Fair"], ["date", "2023-11-11 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.679622"], ["updated_at", "2023-11-02 03:08:33.679622"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'aaa' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "aaa"], ["first_name", "bbb"], ["last_name", "ccc"], ["password_digest", "$2a$04$v4Yb4S/juuy3I2D32ragQu1hNu1gXZzhH7oTqkYfUjTyCHM3kl2Le"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'eee' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "eee"], ["first_name", "fff"], ["last_name", "ggg"], ["password_digest", "$2a$04$8PWbshATSL6Z5trIQZ0hZuCNcPSle.kCTlIhWx1UHftyMjfXc/zLa"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"aaa", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "aaa"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+Started GET "/events/new" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+Started POST "/events" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"title"=>"New events", "tag"=>"Computer Science", "location"=>"Mudd", "date(1i)"=>"2023", "date(2i)"=>"11", "date(3i)"=>"2"}, "commit"=>"Save Changes"}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "New events"], ["location", "Mudd"], ["tag", "Computer Science"], ["date", "2023-11-02 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.760030"], ["updated_at", "2023-11-02 03:08:33.760030"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event1"], ["location", "Mudd"], ["tag", "Computer Science"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.767673"], ["updated_at", "2023-11-02 03:08:33.767673"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event2"], ["location", "NWC"], ["tag", "Speech"], ["date", "2023-11-26 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.769121"], ["updated_at", "2023-11-02 03:08:33.769121"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event3"], ["location", "Uris"], ["tag", "Business"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.770461"], ["updated_at", "2023-11-02 03:08:33.770461"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event4"], ["location", "Lerner"], ["tag", "Career Fair"], ["date", "2023-11-11 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.771749"], ["updated_at", "2023-11-02 03:08:33.771749"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'aaa' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "aaa"], ["first_name", "bbb"], ["last_name", "ccc"], ["password_digest", "$2a$04$sck5l1L8lwhkVoaFwTELruXIHcKsd2Xss/uWd/drmUG9gfDMtHGV2"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'eee' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "eee"], ["first_name", "fff"], ["last_name", "ggg"], ["password_digest", "$2a$04$/HHSZUEJ1VMrhvURsGrjjuL4jJlIod1g6vIaas2P/UuUnvS1MD0KK"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"aaa", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "aaa"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Event1"]]
+Started GET "/events/1/edit" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+Started PUT "/events/1" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"title"=>"Event1", "location"=>"Lerner", "date"=>"2023-11-25 00:00:00 UTC"}, "commit"=>"Update Event Info", "id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "events" SET "location" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["location", "Lerner"], ["updated_at", "2023-11-02 03:08:33.839560"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/events/1
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms)
+Started GET "/events/1" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Event1"]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event1"], ["location", "Mudd"], ["tag", "Computer Science"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.862997"], ["updated_at", "2023-11-02 03:08:33.862997"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event2"], ["location", "NWC"], ["tag", "Speech"], ["date", "2023-11-26 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.865289"], ["updated_at", "2023-11-02 03:08:33.865289"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Event3"], ["location", "Uris"], ["tag", "Business"], ["date", "2023-11-25 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.866998"], ["updated_at", "2023-11-02 03:08:33.866998"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "location", "tag", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Event4"], ["location", "Lerner"], ["tag", "Career Fair"], ["date", "2023-11-11 00:00:00.000000"], ["created_at", "2023-11-02 03:08:33.868702"], ["updated_at", "2023-11-02 03:08:33.868702"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'aaa' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "aaa"], ["first_name", "bbb"], ["last_name", "ccc"], ["password_digest", "$2a$04$vvcANprns6HKzxpxUZhHTOuwFZsF/tfEBjh/E.VNmzLZQS2EChkRi"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'eee' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "eee"], ["first_name", "fff"], ["last_name", "ggg"], ["password_digest", "$2a$04$3FAWLgPAdDBi5LWoCM7eveq6SATAxNsbIKwrj.VogR1D.2HZ/inVO"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"aaa", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "aaa"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.1ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Event1"]]
+Started GET "/events/1" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started DELETE "/events/1" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester1' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "tester1"], ["first_name", "tfn1"], ["last_name", "tln1"], ["password_digest", "$2a$04$a0Tuc17.Nwp8NvHIKv3WReqlltH2MofIT1agq2Mmud/vHdQSlB5UG"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester2' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "tester2"], ["first_name", "tfn2"], ["last_name", "tln2"], ["password_digest", "$2a$04$p0/.Y3dmJnqTyZGSfu0mIuG3eNmcTOCzuwNHgSLrt3VwjPWtpMTgW"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"tester1", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "tester1"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started GET "/users" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:33 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started GET "/users/1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mActivityUserRelation Load (0.0ms)[0m  [1mSELECT "activity_user_relations".* FROM "activity_user_relations" WHERE "activity_user_relations"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+Started GET "/users/1/edit" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "tester1"]]
+Started PUT "/users/1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Tester1 First Name", "last_name"=>"tln1", "password"=>"[FILTERED]"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."user_name" = 'tester1' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "users" SET "first_name" = ? WHERE "users"."id" = ?[0m  [["first_name", "Tester1 First Name"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/users/1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mActivityUserRelation Load (0.0ms)[0m  SELECT "activity_user_relations".* FROM "activity_user_relations" WHERE "activity_user_relations"."user_id" = ?  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester1' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "tester1"], ["first_name", "tfn1"], ["last_name", "tln1"], ["password_digest", "$2a$04$jM3BjDKv.oT6WcruPGnCMOW1WeZfovtoRfY3TOJ7lZF5Yz1RtAlWi"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester2' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "tester2"], ["first_name", "tfn2"], ["last_name", "tln2"], ["password_digest", "$2a$04$KYIFmsGh/F2sZ2Pbuh5Q/.1GZ6fLh8KNTMuA.PQ8stKVsiaEVH.Pi"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"tester1", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "tester1"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.1ms)
+Started GET "/users" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+Started GET "/users/1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mActivityUserRelation Load (0.0ms)[0m  [1mSELECT "activity_user_relations".* FROM "activity_user_relations" WHERE "activity_user_relations"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+Started GET "/users/1/edit" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "tester1"]]
+Started PUT "/users/1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"tfn1", "last_name"=>"tln1", "password"=>"[FILTERED]"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."user_name" = 'tester1' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "password_digest" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$04$vJlkIDOzLboMcF99wozeKe3ABCqedmiY/urOiRuXDJMsNAv6OAyB2"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users/1
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
+Started GET "/users/1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mActivityUserRelation Load (0.8ms)[0m  SELECT "activity_user_relations".* FROM "activity_user_relations" WHERE "activity_user_relations"."user_id" = ?  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.9ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"tester1", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "tester1"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester1' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "tester1"], ["first_name", "tfn1"], ["last_name", "tln1"], ["password_digest", "$2a$04$GP2P5HKIsHirVLRwKZR4Ruh4YepoYiYWgSNcJWEZx27hCO/st6lgq"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester2' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "tester2"], ["first_name", "tfn2"], ["last_name", "tln2"], ["password_digest", "$2a$04$H6Y1BvVh9zgjKRfA6qzfX.GdloM7rtUl6et2qoGv1iYg3hCNZh3mS"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"tester1", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "tester1"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+Started GET "/users" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Started GET "/users/1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mActivityUserRelation Load (0.0ms)[0m  SELECT "activity_user_relations".* FROM "activity_user_relations" WHERE "activity_user_relations"."user_id" = ?  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+Started GET "/users/logout" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#logout as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#index as HTML
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user1' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "user1"], ["first_name", "uu"], ["last_name", "ul1"], ["password_digest", "$2a$04$C8qVpL98y.S.CuJkGsel5Oazs/FYR6PxgW.lN3rgAKsFzJvtQrQwW"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user2' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "user2"], ["first_name", "bb"], ["last_name", "ul2"], ["password_digest", "$2a$04$Bz2CD5FH7tIhqtCpLTuMVupMcl8lJT.htzg/cu3p.pzYqLno9gb9e"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#index as HTML
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user1' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "user1"], ["first_name", "uu"], ["last_name", "ul1"], ["password_digest", "$2a$04$kfrTpnMDC3Z/lFgQydz/9ufsfAOp95GMse..OTw/xdKcLnjmEZ2rO"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user2' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "user2"], ["first_name", "bb"], ["last_name", "ul2"], ["password_digest", "$2a$04$6VKqxSBJam8WQDItRRWoR.ryXKRI0jIrb/y3zMbESl2nncYQVw2O6"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "user1"]]
+Started GET "/users/1/edit" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://www.example.com/sessions/new
+Filter chain halted as :user_authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user1' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "user1"], ["first_name", "uu"], ["last_name", "ul1"], ["password_digest", "$2a$04$Vcn0X47TBFVmzFw8k8XjIuAQmDaienCbxh6W7NY5v1LIZ2NLp3mpG"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user2' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "user2"], ["first_name", "bb"], ["last_name", "ul2"], ["password_digest", "$2a$04$pg8S/MqWjqR9ihsDRG1z1uuwd8g90xG4sNOam2bgxUUyAUjpBfELO"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/sessions/new
+Filter chain halted as :user_authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user1' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "user1"], ["first_name", "uu"], ["last_name", "ul1"], ["password_digest", "$2a$04$IEFJ2P4tB4dL861S9YIfxOCBosgS5k65KHMwZW53S.0aoWcePf7We"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user2' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "user2"], ["first_name", "bb"], ["last_name", "ul2"], ["password_digest", "$2a$04$5HyTJ.g0F8w7JXQ3MRo6tu4R7QpDuTDijsOA9heCHplSc2cHX2ZDK"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "user1"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user1' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "user1"], ["first_name", "uu"], ["last_name", "ul1"], ["password_digest", "$2a$04$fDvtJF/AN8o/tOgpkBfOdey9Zby95wOOvk.fO5z7OKYccMjpOT6h."]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'user2' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["user_name", "user2"], ["first_name", "bb"], ["last_name", "ul2"], ["password_digest", "$2a$04$eqzadwpvq3zwFOUJMDbdSO9UTvsACt/TrQVrX4qSx/LBdr2g.7cNy"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"user2", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "user2"]]
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'u1' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "u1"], ["first_name", "f1"], ["last_name", "l1"], ["password_digest", "$2a$04$kjkQv.GR.kX3SXG557/Gk.fOHuBeSPqBb5HNPAXJExnKPGzfIWEfC"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'u2' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "u2"], ["first_name", "f2"], ["last_name", "l2"], ["password_digest", "$2a$04$sAo5gcSh9UqGDmx6Nb5e8.Ko164LjLTwAAQgS/kO.kggE9S07oKvq"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"tester3", "first_name"=>"f3", "last_name"=>"l3", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'tester3' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "tester3"], ["first_name", "f3"], ["last_name", "l3"], ["password_digest", "$2a$04$HE68733echfdFUnFkT/Enexve/Ti3dan3Zc/590slWjs2K4BTOg76"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?sort_by=id&tags%5BBusiness%5D=1&tags%5BCareer+Fair%5D=1&tags%5BComputer+Science%5D=1&tags%5BOthers%5D=1&tags%5BSpeech%5D=1
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?sort_by=id&tags[Business]=1&tags[Career+Fair]=1&tags[Computer+Science]=1&tags[Others]=1&tags[Speech]=1" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"sort_by"=>"id", "tags"=>{"Business"=>"1", "Career Fair"=>"1", "Computer Science"=>"1", "Others"=>"1", "Speech"=>"1"}}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'u1' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "u1"], ["first_name", "f1"], ["last_name", "l1"], ["password_digest", "$2a$04$1TzgeXLeTNdoQQruVNRU1uc.TwbzI3n03z3ZcDmKFdtsiH5FSCCNa"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'u2' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("user_name", "first_name", "last_name", "password_digest") VALUES (?, ?, ?, ?)  [["user_name", "u2"], ["first_name", "f2"], ["last_name", "l2"], ["password_digest", "$2a$04$t.PJQqhPXLkI/cWcpbjrIOvRORv5i4AeN7HqNWRam9GekGDzrw50i"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"user_name"=>"u1", "first_name"=>"f1", "last_name"=>"l1", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'u1' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Redirected to http://www.example.com/users/new
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms)
+Started GET "/users/new" for 127.0.0.1 at 2023-11-01 23:08:34 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
