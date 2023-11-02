@@ -28,19 +28,19 @@ class EventsController < ApplicationController
       end
     
       def create
-        @event = Event.create!(event_params)
+        #@event = Event.create!(event_params)
         #@event.update(creator_id: session[:user_id])
-        flash[:notice] = "#{@event.title} was successfully created."
-        # begin
-        #   @event = Event.create!(event_params)
-        #   @event.update(creator_id: session[:user_id])
-        # rescue => exception
-        #   flash[:notice] = "Cannot contain empty field."
-        # else
-        #   flash[:notice] = "#{@event.title} was successfully created."
+        #flash[:notice] = "#{@event.title} was successfully created."
+        begin
+          @event = Event.create!(event_params)
+          #@event.update(creator_id: session[:user_id])
+        rescue => exception
+          flash[:notice] = "Cannot contain empty field."
+        else
+          flash[:notice] = "#{@event.title} was successfully created."
 
-        # end
-        ActivityUserRelation.create!(session[:user_id], @event.id)
+        end
+        #ActivityUserRelation.create!(session[:user_id], @event.id)
         
         redirect_to events_path
       end
@@ -51,8 +51,15 @@ class EventsController < ApplicationController
     
       def update
         @event = Event.find params[:id]
-        @event.update_attributes!(event_params)
-        flash[:notice] = "#{@event.title} was successfully updated."
+
+        begin 
+          @event.update_attributes!(event_params)
+        rescue => exception
+          flash[:notice] = "Some fields are empty, event cannot be updated."
+        else
+          flash[:notice] = "#{@event.title} was successfully updated."
+          
+        end
         redirect_to event_path(@event)
       end
     

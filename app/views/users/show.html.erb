@@ -22,13 +22,13 @@
 </ul>
 
 <% if @id != @session_id then %>
-<div class="row">
-  <% if followed(@session_id, @id) then %>
-  <%= link_to 'Unfollow', following_path(follower: @session_id, followee: @id), :method => 'delete', :class => 'btn btn-danger col-2' %>
-  <% else %>
-  <%= link_to 'Follow', following_index_path(follower: @session_id, followee: @id), :method => 'post', :class => 'btn btn-primary col-2' %>
-  <% end %>
-</div>
+# <div class="row">
+#   <% if followed(@session_id, @id) then %>
+#   <%= link_to 'Unfollow', following_path(follower: @session_id, followee: @id), :method => 'delete', :class => 'btn btn-danger col-2' %>
+#   <% else %>
+#   <%= link_to 'Follow', following_index_path(follower: @session_id, followee: @id), :method => 'post', :class => 'btn btn-primary col-2' %>
+#   <% end %>
+# </div>
 <% end %>
 <div class="row">
   <% if @id == @session_id then %>

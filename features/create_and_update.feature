@@ -55,3 +55,13 @@ Scenario: delete event
   Given I am on the details page for "Event1"
   And   I follow "Delete"
   Then  I should be on the home page
+
+  Scenario: Edit and leave some empty fields
+    When I go to the login page
+    And  I fill in "Username" with "aaa"
+    And  I fill in "Password" with "ddd"
+    And  I press "Login"
+    When I go to the event edit page for "Event1"
+    And  I fill in "Location" with ""
+    And  I press "Update Event Info"
+    Then the location of "Event1" should be "Lerner"
