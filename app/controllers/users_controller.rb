@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     def destroy
         @user = User.find(session[:user_id])
         @user.destroy
-        Event.where(creator_id: session[:user_id]).destroy_all
+        #Event.where(creator_id: session[:user_id]).destroy_all
         logout
     end
 
@@ -79,9 +79,9 @@ class UsersController < ApplicationController
         end
     end
 
-    private
-    def followed(follower_id, followee_id)
-      return !Follow.where(follower: follower_id, followee: followee_id).empty?
-    end
+    # private
+    # def followed(follower_id, followee_id)
+    #   return !Follow.where(follower: follower_id, followee: followee_id).empty?
+    # end
 end
       

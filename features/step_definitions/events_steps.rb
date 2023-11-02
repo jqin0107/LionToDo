@@ -29,3 +29,7 @@ Then /^the tags of "(.+)" should be "(.+)"/ do |title, tags|
   visit event_path(event)
   expect(page.body).to match(/Tag: #{tags}/)
 end
+
+Then /the location of "(.*)" should be "(.*)"/ do |title, loc|
+  expect(Event.find_by_title(title).location == loc)
+end

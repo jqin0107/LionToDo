@@ -29,7 +29,7 @@ class EventsController < ApplicationController
     
       def create
         @event = Event.create!(event_params)
-        @event.update(creator_id: session[:user_id])
+        #@event.update(creator_id: session[:user_id])
         flash[:notice] = "#{@event.title} was successfully created."
         # begin
         #   @event = Event.create!(event_params)
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
         #   flash[:notice] = "#{@event.title} was successfully created."
 
         # end
-        #ActivityUserRelation.create!(session[:user_id], @event.id)
+        ActivityUserRelation.create!(session[:user_id], @event.id)
         
         redirect_to events_path
       end
