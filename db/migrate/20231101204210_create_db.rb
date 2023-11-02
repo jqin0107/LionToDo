@@ -13,9 +13,6 @@ class CreateDb < ActiveRecord::Migration
       t.string :location
       t.timestamps null: false
     end
-    create_table :activity_user_relations do |t|
-      t.integer :user_id
-      t.integer :event_id
-    end
+
   end
 end

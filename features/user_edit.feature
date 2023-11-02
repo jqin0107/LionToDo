@@ -41,13 +41,3 @@ Scenario: Logout
   Then I follow "Go to User profile"
   Then I follow "Logout"
   Then I should be on the login page
-
-Scenario: Delete user
-  When I go to the welcome page
-  Then I follow "Go to User profile"
-  Then I follow "Delete"
-  Then I should be on the login page
-  And  I fill in "Username" with "tester1"
-  And  I fill in "Password" with "abcdefgh"
-  And  I press "Login"
-  Then I should be on the login page

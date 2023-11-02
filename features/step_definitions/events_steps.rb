@@ -11,7 +11,7 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   expect(page.body.index(e1) < page.body.index(e2))
 end
 
-When /I (un)?check the following tags: (.*)/ do |uncheck, rating_list|
+When /I (un)?check the following tags: (.*)/ do |uncheck, tag_list|
   tag_list.split(', ').each do |tag|
     step %{I #{uncheck.nil? ? '' : 'un'}check "ratings_#{tag}"}
   end
@@ -25,7 +25,7 @@ Then /I should see all the events/ do
 end
 
 Then /^the tags of "(.+)" should be "(.+)"/ do |title, tags|
-  movie = Event.find_by_title(title)
+  event = Event.find_by_title(title)
   visit event_path(event)
   expect(page.body).to match(/Tags: #{tags}/)
 end

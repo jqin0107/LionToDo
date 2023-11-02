@@ -20,7 +20,7 @@ class UsersController < ApplicationController
         @relations = ActivityUserRelation.where(user_id: @session_id)
         @activities = Array.new
         @relations.each do |relation|
-            @activities.push Activity.find(relation[:activity_id])
+            @activities.push Event.find(relation[:event_id])
         end
 
 
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     def destroy
         @user = User.find(session[:user_id])
         @user.destroy
-        Activity.where(creator_id: session[:user_id]).destroy_all
+        Event.where(creator_id: session[:user_id]).destroy_all
         logout
     end
 

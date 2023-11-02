@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  #before_action :user_authenticate
+  before_action :user_authenticate
   before_action :force_index_redirect, only: [:index]
   #helper_method :get_organizor_name, :can_modify, :participated
 
@@ -159,11 +159,11 @@ class EventsController < ApplicationController
 
 
 
-      # def user_authenticate
-      #   if session[:user_id] == nil
-      #     redirect_to new_session_path
-      #     return
-      #   end
-      # end
+       def user_authenticate
+        if session[:user_id] == nil
+          redirect_to new_session_path
+          return
+        end
+      end
 
 end

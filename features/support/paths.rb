@@ -19,20 +19,20 @@ module NavigationHelpers
       case page_name
   
       when /^the login page$/ then '/sessions/new'
-      when /^the home page$/ then "/activities"
+      when /^the home page$/ then "/events"
       when /^the register page$/ then "/users/new"
       when /^the welcome page$/ then "/users"
       when /^the edit page for "(.*)"$/ then edit_user_path($1)
-      when /^the new event page$/ then "/activities/new"
+      when /^the new event page$/ then "/events/new"
 
 
       when /^the activity edit page for "(.*)"$/
-        activity_id = Activity.find_by(event_name: $1).id
-        edit_activity_path(activity_id)
+        event_id = Event.find_by(title: $1).id
+        edit_event_path(event_id)
 
       when /^the details page for "(.*)"$/
-        activity_id = Activity.find_by(event_name: $1).id
-        activity_path(activity_id)
+        event_id = Event.find_by(title: $1).id
+        event_path(event_id)
 
       when /^the user details page for "(.*)"$/
         user_id = User.find_by(user_name: $1).id
