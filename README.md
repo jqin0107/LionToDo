@@ -1,7 +1,7 @@
 # LionToDo
 ## Team members 
-Yanxi Chen (yc3841)    
-Jasmine Xin (yx2810)
+Yanxi Chen (yc3841)
+Jasmine Xin (yx2810) 
 Jingyue Qin (jq2343)
 Haoze Lin (hl3459)
 
